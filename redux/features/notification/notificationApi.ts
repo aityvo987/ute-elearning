@@ -10,7 +10,7 @@ export const notificationApi =apiSlice.injectEndpoints({
             }),
         }),
         updateNotificationStatus: builder.mutation({
-            query:({ id })=>({
+            query:(id)=>({
                 url:`update-notification/${id}`,
                 method:"PUT",
                 credentials:"include" as const,
