@@ -57,7 +57,8 @@ const SideBarProfile: FC<Props> = ({
           </h5>
         </div>
         {/* Enrolled Class */}
-        <div
+        { (user.role==="user")&&(
+          <div
           className={`w-full flex items-center px-3 py-4 cursor-pointer ${active === 3 ? "dark:bg-slate-800 bg-white" : "bg-transparent"
             }`}
           onClick={() => setActive(3)}
@@ -68,6 +69,8 @@ const SideBarProfile: FC<Props> = ({
             Enrolled Course
           </h5>
         </div>
+        )}
+        
         {/* Admin dashboard */}
         {(user.role === "admin" || user.role === "lecturer") && (
           <Link

@@ -34,8 +34,9 @@ type Props = {
   setRoute: (route: string) => void;
   changedCartItems?: boolean;
   setChangedCartItems?:any;
+  isProfile?:boolean
 };
-const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute,changedCartItems, setChangedCartItems,  }) => {
+const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute,changedCartItems, setChangedCartItems,isProfile  }) => {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [active, setActive] = useState(false);
@@ -84,7 +85,7 @@ const [deleteFromCart, { isSuccess: deleteCartSuccess, error: deleteCartError }]
       }
       if (userData){
         console.log("Redirecting",userData.user);
-        if(userData.user.role==="admin"||userData.user.role==="lecturer"){
+        if((userData.user.role==="admin"||userData.user.role==="lecturer")&&!isProfile){
           redirect("/admin");
         }
       }

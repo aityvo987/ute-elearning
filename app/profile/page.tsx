@@ -48,6 +48,7 @@ const page: FC<Props> = () => {
           activeItem={activeItem}
           setRoute={setRoute}
           route={route}
+          isProfile={true}
         />
         <Profile user={user} route={route} setRoute={setRoute}></Profile>
         <Footer/>

@@ -62,21 +62,21 @@ const AdminSidebar = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const [logout, setLogout] = useState(false);
-  const router = useRouter(); 
+  const router = useRouter();
   const { } = useLogOutQuery(undefined, {
     skip: !logout ? true : false,
   });
   useEffect(() => {
     setMounted(true)
-    if(!user){
+    if (!user) {
       router.push("/admin")
     }
   }, []);
   if (!mounted) {
     return null;
   }
-  
-  
+
+
   return (
     <Box
       sx={{
@@ -123,18 +123,20 @@ const AdminSidebar = () => {
             <Box mb="25px">
               {/* User Avatar */}
               <Box display="flex" justifyContent="center" alignItems="center">
-                <Image
-                  src={user.avatar ? user.avatar.url : avatarDefault}
-                  alt="User Avatar"
-                  width={100}
-                  height={100}
-                  className={`${styles.avatar} w-[100px] h-[100px]`}
-                  style={{
-                    cursor: "pointer",
-                    border: "3px solid #5b6fe6",
-                    borderRadius: "50%",
-                  }}
-                />
+                <a href="/profile">
+                  <Image
+                    src={user.avatar ? user.avatar.url : avatarDefault}
+                    alt="User Avatar"
+                    width={100}
+                    height={100}
+                    className={`${styles.avatar} w-[100px] h-[100px]`}
+                    style={{
+                      cursor: "pointer",
+                      border: "3px solid #5b6fe6",
+                      borderRadius: "50%",
+                    }}
+                  />
+                </a>
               </Box>
               <Box textAlign="center">
                 <Typography
