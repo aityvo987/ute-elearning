@@ -231,43 +231,7 @@ const AdminSidebar = () => {
                         selected={selected}
                         setSelected={setSelected}
                       />
-                      {/* Analytics Section */}
-                      <Typography
-                        variant="h5"
-                        className="!text-[18px] text:black dark:text-[#fff] capitalize !font-[400]"
-                        sx={{ m: "15px 0 5px 25px" }}
-                      >
-                        {!isCollapsed && "Analytics"}
-                      </Typography>
-                      <SubMenu
-                        title="Analytics"
-                        icon={<BarChartOutlinedIcon />}
-                        placeholder={undefined}
-                        onPointerEnterCapture={undefined}
-                        onPointerLeaveCapture={undefined}
-                      >
-                        <Item
-                          title="Courses"
-                          to="/admin/courses-analytics"
-                          icon={<WysiwygIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                        />
-                        <Item
-                          title="Users"
-                          to="/admin/users-analytics"
-                          icon={<PeopleOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                        />
-                        <Item
-                          title="Orders"
-                          to="/admin/orders-analytics"
-                          icon={<ReceiptOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                        />
-                      </SubMenu>
+                      
 
                       {/* Controller section */}
                       <Typography
@@ -293,14 +257,7 @@ const AdminSidebar = () => {
                       >
                         {!isCollapsed && "Extras"}
                       </Typography>
-                      {/* Setting */}
-                      <Item
-                        title="Settings"
-                        to="/admin/settings"
-                        icon={<SettingsIcon />}
-                        selected={selected}
-                        setSelected={setSelected}
-                      />
+                      
                       {/* Logout */}
                       <Item
                         title="Logout"
