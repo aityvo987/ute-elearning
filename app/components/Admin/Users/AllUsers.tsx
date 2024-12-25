@@ -114,7 +114,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                 name: item.name,
                 email: item.email,
                 role: item.role,
-                courses: item.courses.length,
+                courses: null,
                 created_at: format(item.createdAt),
             })
         });
