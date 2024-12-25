@@ -75,7 +75,9 @@ const AdminSidebar = () => {
   if (!mounted) {
     return null;
   }
-
+  const handleAvatarClick = () => {
+    router.push("/profile");
+  };
 
   return (
     <Box
@@ -123,8 +125,7 @@ const AdminSidebar = () => {
             <Box mb="25px">
               {/* User Avatar */}
               <Box display="flex" justifyContent="center" alignItems="center">
-                <a href="/profile">
-                  <Image
+              <Image
                     src={user.avatar ? user.avatar.url : avatarDefault}
                     alt="User Avatar"
                     width={100}
@@ -135,8 +136,8 @@ const AdminSidebar = () => {
                       border: "3px solid #5b6fe6",
                       borderRadius: "50%",
                     }}
+                    onClick={handleAvatarClick}
                   />
-                </a>
               </Box>
               <Box textAlign="center">
                 <Typography
