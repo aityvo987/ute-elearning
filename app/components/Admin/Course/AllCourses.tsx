@@ -54,12 +54,12 @@ const AllCourses = (props: Props) => {
         },
         {
             field: "  ",
-            headerName: "Edit Quizzes",
+            headerName: "Questions & Review",
             flex: 0.4,
             renderCell: (params: any) => {
                 return (
                     <>
-                        <Link href={`/admin/quizzes/${params.row.id}`}
+                        <Link href={`/course-access/${params.row.id}`}
                         >
                             <Button>
                                 <FiEdit2

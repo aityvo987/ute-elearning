@@ -15,16 +15,18 @@ const page = ({ params }: Props) => {
     const id = params.id;
 
     const { isLoading, error, data } = useLoadUserQuery(undefined, {});
-
+    const user = data?.user;
     useEffect(() => {
         if (data) {
-            const isPurchased = data.user.courses.find((item: any) => item._id === id);
-            console.log("courses:",data.user.courses)
-            if (!isPurchased || error) {
-                redirect("/");
+            if (user.role!=="lecturer"){
+                const isPurchased = data.user.courses.find((item: any) => item._id === id);
+                if (!isPurchased || error) {
+                    redirect("/");
+                }
             }
+            
         }
-        if(error){
+        if (error) {
             redirect("/");
         }
     }, [data, error]);
