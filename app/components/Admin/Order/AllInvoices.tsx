@@ -34,7 +34,7 @@ const AllInvoices = ({ isDashboard }: Props) => {
                     userName: user?.name,
                     userEmail: user?.email,
                     title: course?.name,
-                    price: "$" + course?.price,
+                    price: "$" + (item.payment_info?.amount/100),
                 };
             });
             setOrderData(temp);
